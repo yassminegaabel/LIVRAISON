@@ -34,3 +34,10 @@
 - Q16 Suppression de produit : suppression réelle ou archivage (hypothèse : archivage logique)
 - Q17 Support client : application web séparée ou section de l'admin ?
 - Q18 RGPD/protection des données personnelles, conservation des positions GPS ?
+
+## Versions de l'environnement (figées en T2.2, le 2026-10-16)
+- Python 3.12.10, pip 26.2.1
+- Node.js 24.19.0, npm 11.17.0, Angular CLI 22.1.7
+- Flutter 3.47.5 (stable), Dart 3.13.4
+- PostgreSQL client 17.11 (serveur à vérifier en T2.5)
+- Les versions des paquets Python seront figées dans backend/requirements.txt en T2.3.

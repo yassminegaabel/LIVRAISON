@@ -6,9 +6,10 @@
 - T1.3 Architecture
 - T1.5 Feuille de route et documents
 - T2.1 Dossier du projet, Git, .gitignore, documents (commit 6278591)
+- T2.2 Vérification des prérequis et versions figées
 
 ## En cours
-- T2.2 Vérification des prérequis
+- T2.3 Inspection du backend existant, puis FastAPI minimal
 
 ## Bloqué
 - Rien
@@ -19,3 +20,4 @@
 
 ## À venir
 - Voir docs/PROJECT_PLAN.md (T2.3 puis suivantes)
+
