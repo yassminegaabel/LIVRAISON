@@ -43,3 +43,14 @@
 - Les versions des paquets Python seront figées dans backend/requirements.txt en T2.3.
 
 - Angular (@angular/core) : ^22.1.0 ; workspace web/ avec 3 apps standalone (customer-site, merchant-portal, admin-dashboard), SCSS, sans SSR (T2.7).
+
+## Décisions métier validées (T3.0, 2026-10-16)
+- D7 Devise : TND (paramètre "currency" de la plateforme). Montants en NUMERIC(10,2).
+- D8 Abonnements commerçants : tables prévues, fonctionnalité en T4.4 ; paiements d'abonnement saisis à la main par l'admin au début.
+- D9 Attribution des livreurs : le premier livreur en ligne qui accepte la course la prend ; l'admin peut assigner manuellement. Attribution automatique plus tard si souhaitée.
+- D10 Frais de livraison : fixes par zone de livraison. Commission : pourcentage configurable (paramètre global, surchargeable par commerçant).
+- D11 Un panier et une commande = un seul commerçant.
+- D12 Clés primaires BIGINT identity ; "enums" en VARCHAR + CHECK ; produits archivés au lieu d'être supprimés.
+- D13 (hypothèse à confirmer) Gain du livreur = driver_share_percent (80 %) des frais de livraison.
+- D14 Zones de livraison : cercle (centre + rayon) au départ.
+- Conception détaillée de la base : voir docs/DATABASE.md.
