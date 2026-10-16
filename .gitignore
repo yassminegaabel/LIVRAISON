@@ -1,0 +1,10 @@
+﻿.env
+.venv/
+__pycache__/
+node_modules/
+dist/
+.dart_tool/
+build/
+*.log
+.idea/
+.vscode/
