@@ -8,9 +8,10 @@
 - T2.1 Dossier du projet, Git, .gitignore, documents (6278591)
 - T2.2 Vérification des prérequis et versions figées (986e17a)
 - T2.3 Backend FastAPI minimal + /health, testé navigateur et Swagger (60619fa)
+- T2.4 Configuration par variables d'environnement (476c4dd)
 
 ## En cours
-- T2.4 Configuration par variables d'environnement
+- T2.5 PostgreSQL et connexion SQLAlchemy
 
 ## Bloqué
 - Rien
@@ -22,3 +23,4 @@
 
 ## À venir
 - T2.5 PostgreSQL, T2.6 Alembic, T2.7 Angular, T2.8 Flutter, T2.9 pytest
+
