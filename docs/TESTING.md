@@ -1,16 +1,20 @@
-# TESTING
-(À compléter au fil des tâches.)
+﻿# TESTING
 
-## Backend (prévu T2.9)
-- Activer le venv : `backend\.venv\Scripts\activate`
-- Tests : `cd backend && pytest`
-- Lancer l'API : `uvicorn app.main:app --reload` puis http://127.0.0.1:8000/docs
+## Backend (depuis le dossier backend)
+- Lancer les tests : .venv\Scripts\python.exe -m pytest -v
+- Lancer l'API : .venv\Scripts\python.exe -m uvicorn app.main:app --reload
+- Swagger : http://127.0.0.1:8000/docs
+- Migrations : .venv\Scripts\alembic.exe upgrade head ; .venv\Scripts\alembic.exe current
+- Prérequis : fichier backend/.env présent (modèle : backend/.env.example) et PostgreSQL démarré.
 
-## Angular (prévu T2.7)
-- `cd web && ng build` ; `ng serve`
+## Angular (depuis le dossier web)
+- Compiler : ng build customer-site ; ng build merchant-portal ; ng build admin-dashboard
+- Lancer : ng serve customer-site (http://localhost:4200)
 
-## Flutter (prévu T2.8)
-- `cd mobile\customer_app && flutter analyze && flutter test`
+## Flutter (depuis mobile\customer_app puis mobile\driver_app)
+- flutter analyze
+- flutter test
+- flutter run (avec un émulateur ou un téléphone connecté)
 
 ## Règle
-Une tâche n'est cochée dans PROGRESS.md qu'après exécution réelle des commandes ci-dessus qui la concernent.
+Une tâche n'est cochée dans PROGRESS.md qu'après exécution réelle des commandes qui la concernent.
