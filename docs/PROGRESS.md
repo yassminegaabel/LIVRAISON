@@ -11,9 +11,10 @@
 - T2.4 Configuration par variables d'environnement (476c4dd)
 - T2.5 PostgreSQL (delivery_db / delivery_user) et connexion SQLAlchemy testée
 - T2.6 Alembic configuré, migration initiale appliquée (9cc8576c03f7)
+- T2.7 Workspace Angular, 3 apps compilées (ac732b5)
 
 ## En cours
-- T2.7 Workspace Angular
+- T2.8 Applications Flutter
 
 ## Bloqué
 - Rien
@@ -26,6 +27,8 @@
 ## À venir
 - T2.5 PostgreSQL, T2.6 Alembic, T2.7 Angular, T2.8 Flutter, T2.9 pytest
 - T2.6 Alembic configuré, migration initiale appliquée (9cc8576c03f7)
+- T2.7 Workspace Angular, 3 apps compilées (ac732b5)
+
 
 
 

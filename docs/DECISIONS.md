@@ -41,3 +41,5 @@
 - Flutter 3.47.5 (stable), Dart 3.13.4
 - PostgreSQL client 17.11 (serveur à vérifier en T2.5)
 - Les versions des paquets Python seront figées dans backend/requirements.txt en T2.3.
+
+- Angular (@angular/core) : ^22.1.0 ; workspace web/ avec 3 apps standalone (customer-site, merchant-portal, admin-dashboard), SCSS, sans SSR (T2.7).
