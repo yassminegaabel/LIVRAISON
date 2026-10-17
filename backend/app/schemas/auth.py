@@ -1,4 +1,6 @@
-﻿from pydantic import BaseModel, Field
+﻿from datetime import datetime
+
+from pydantic import BaseModel, Field
 
 
 class LoginRequest(BaseModel):
@@ -15,3 +17,16 @@ class TokenResponse(BaseModel):
     refresh_token: str
     token_type: str = "bearer"
     expires_in: int = Field(description="Durée de vie du access token, en secondes")
+
+
+class MeResponse(BaseModel):
+    """Profil de l'utilisateur connecté (le prénom et le nom dépendent du rôle)."""
+
+    id: int
+    email: str | None
+    phone: str | None
+    role: str
+    is_active: bool
+    first_name: str | None
+    last_name: str | None
+    created_at: datetime

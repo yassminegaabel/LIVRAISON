@@ -72,3 +72,8 @@
 - D24 Refresh avec rotation : chaque refresh révoque l'ancien token. Réutilisation d'un token déjà utilisé : tous les refresh tokens de l'utilisateur sont révoqués.
 - D25 Logout : révoque le refresh token (idempotent, 204). Limite connue : un access token déjà émis reste valide jusqu'à son expiration (30 min).
 - D26 Pas encore de limitation du nombre de tentatives de connexion : à ajouter en T7.3 (protection contre la force brute).
+
+## Contrôle d'accès (T3.5)
+- D27 Utilisateur courant : le rôle et l'état du compte (is_active) sont relus en base à chaque requête, pas dans le token. Une désactivation ou un changement de rôle est effectif immédiatement.
+- D28 Protection des routes : Depends(get_current_user) pour être connecté, Depends(require_roles(UserRole.X, ...)) pour restreindre à certains rôles (401 si non authentifié, 403 si rôle insuffisant).
+- D29 Authentification Swagger : schéma HTTPBearer (coller l'access token). Profil de l'utilisateur connecté : GET /api/v1/users/me.
