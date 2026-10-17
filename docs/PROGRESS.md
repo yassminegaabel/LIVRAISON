@@ -6,19 +6,20 @@
 ### Phase 2 : mise en place (terminée)
 - T2.1 à T2.9 : Git, prérequis, FastAPI, config, PostgreSQL, Alembic, Angular, Flutter, pytest
 ### Phase 3 : fondations backend
-- T3.0 Décisions métier validées (D7 à D14 dans DECISIONS.md)
-- T3.1 Conception de la base (docs/DATABASE.md, validée pour users/refresh_tokens/admins/customers ; le reste sera relu avant T4.x)
+- T3.0 Décisions métier validées (D7 à D14)
+- T3.1 Conception de la base (docs/DATABASE.md)
+- T3.2 Modèles users, refresh_tokens, admins, customers + migration 792c3e1c2311 (fusionnée, commit 8737838)
 
 ## En cours
-- T3.2 Modèles users, refresh_tokens, admins, customers + migration (branche feature/t3-2-user-models)
+- T3.3 Hachage Argon2 + JWT + refresh tokens (branche feature/t3-3-security)
 
 ## Bloqué
 - Rien
 
 ## Notes
 - Avertissement à traiter plus tard : starlette.testclient signale que httpx est déprécié.
-- Le mot de passe de la base est uniquement dans backend/.env (ignoré par Git).
+- Le mot de passe de la base et la SECRET_KEY sont uniquement dans backend/.env (ignoré par Git).
 - Dépôt GitHub : à relier (git remote add origin ...), pas bloquant.
 
 ## À venir
-- T3.3 hash des mots de passe + JWT, T3.4 inscription/connexion, T3.5 RBAC, T3.6 erreurs centralisées
+- T3.4 inscription client + connexion + refresh, T3.5 RBAC, T3.6 erreurs centralisées, T3.7 audit logs
