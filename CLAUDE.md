@@ -40,3 +40,7 @@ livraison-platform/
 ## Début de chaque session
 Lire CLAUDE.md, docs/PROJECT_PLAN.md, docs/PROGRESS.md, docs/DECISIONS.md ; inspecter les fichiers et `git status` ; reprendre à la première tâche incomplète.
 Si le contexte est presque plein : mettre à jour PROGRESS.md et indiquer où reprendre.
+
+## Workflow Git
+- Une branche par tâche : feature/tX-Y-nom. Fusion dans main une fois la tâche testée.
+- Ne jamais pousser backend/.env (déjà dans .gitignore).

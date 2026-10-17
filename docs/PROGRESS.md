@@ -2,28 +2,23 @@
 
 ## Terminé
 ### Phase 1 : analyse et architecture
-- T1.1 Exigences, T1.2 Rôles (brouillon), T1.3 Architecture, T1.5 Feuille de route et documents
+- T1.1 Exigences, T1.2 Rôles (brouillon), T1.3 Architecture, T1.5 Feuille de route
 ### Phase 2 : mise en place (terminée)
-- T2.1 Git et documents
-- T2.2 Prérequis et versions figées
-- T2.3 Backend FastAPI + /health
-- T2.4 Configuration par variables d'environnement
-- T2.5 PostgreSQL (delivery_db / delivery_user) et SQLAlchemy
-- T2.6 Alembic, migration initiale 9cc8576c03f7
-- T2.7 Workspace Angular, 3 apps compilées
-- T2.8 Apps Flutter customer_app et driver_app
-- T2.9 Test pytest /health (2 passed, commit 5beabb8)
+- T2.1 à T2.9 : Git, prérequis, FastAPI, config, PostgreSQL, Alembic, Angular, Flutter, pytest
+### Phase 3 : fondations backend
+- T3.0 Décisions métier validées (D7 à D14 dans DECISIONS.md)
+- T3.1 Conception de la base (docs/DATABASE.md, validée pour users/refresh_tokens/admins/customers ; le reste sera relu avant T4.x)
 
 ## En cours
-- T3.0 Confirmer les décisions métier (Q1, Q3 à Q6) avant la conception de la base
-- T3.1 Conception détaillée de la base de données (docs/DATABASE.md)
+- T3.2 Modèles users, refresh_tokens, admins, customers + migration (branche feature/t3-2-user-models)
 
 ## Bloqué
 - Rien
 
 ## Notes
-- Avertissement à traiter plus tard : starlette.testclient signale que httpx est déprécié (les tests passent).
+- Avertissement à traiter plus tard : starlette.testclient signale que httpx est déprécié.
 - Le mot de passe de la base est uniquement dans backend/.env (ignoré par Git).
+- Dépôt GitHub : à relier (git remote add origin ...), pas bloquant.
 
 ## À venir
-- T3.2 modèles utilisateurs/rôles, T3.3 hash + JWT, T3.4 inscription/connexion, T3.5 RBAC
+- T3.3 hash des mots de passe + JWT, T3.4 inscription/connexion, T3.5 RBAC, T3.6 erreurs centralisées
