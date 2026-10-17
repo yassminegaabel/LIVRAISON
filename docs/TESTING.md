@@ -22,3 +22,4 @@ Une tâche n'est cochée dans PROGRESS.md qu'après exécution réelle des comma
 ## Tests avec base de données (depuis T3.4a)
 - PostgreSQL doit tourner et backend/.env doit exister : les tests d'API utilisent la base de développement dans une transaction annulée (aucune donnée conservée).
 - Commande : .venv\Scripts\python.exe -m pytest -v (24 tests attendus après T3.4a)
+- Après T3.4b : 36 tests attendus (users en base : 1 = l'utilisateur de test créé à la main en T3.4a).
