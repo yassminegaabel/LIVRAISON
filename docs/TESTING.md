@@ -18,3 +18,7 @@
 
 ## Règle
 Une tâche n'est cochée dans PROGRESS.md qu'après exécution réelle des commandes qui la concernent.
+
+## Tests avec base de données (depuis T3.4a)
+- PostgreSQL doit tourner et backend/.env doit exister : les tests d'API utilisent la base de développement dans une transaction annulée (aucune donnée conservée).
+- Commande : .venv\Scripts\python.exe -m pytest -v (24 tests attendus après T3.4a)

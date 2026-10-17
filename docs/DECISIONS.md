@@ -60,3 +60,9 @@
 - D16 Access token : JWT HS256 (PyJWT), 30 min, claims sub/role/type/iat/exp/jti. Le champ "sub" est une chaîne (id utilisateur).
 - D17 Refresh token : chaîne aléatoire opaque (non JWT), stockée hachée en SHA-256 dans refresh_tokens, durée 30 jours, révocable.
 - D18 SECRET_KEY : minimum 32 caractères, uniquement dans .env. Changer la clé invalide tous les access tokens.
+
+## Inscription (T3.4a)
+- D19 Plan : T3.4 est découpée en T3.4a (inscription) et T3.4b (connexion, refresh, déconnexion).
+- D20 Inscription : rôle toujours "customer" ; mot de passe 8 à 128 caractères avec au moins une lettre et un chiffre ; téléphone au format international E.164 ; email stocké en minuscules.
+- D21 Doublons : réponse 409 qui précise "email" ou "téléphone" (choix d'ergonomie ; la limitation du nombre de tentatives sera ajoutée en T7.3).
+- D22 Tests d'API : transaction annulée à la fin de chaque test (fixture db_session), sur la base de développement.
