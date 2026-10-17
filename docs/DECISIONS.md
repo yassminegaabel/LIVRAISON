@@ -77,3 +77,9 @@
 - D27 Utilisateur courant : le rôle et l'état du compte (is_active) sont relus en base à chaque requête, pas dans le token. Une désactivation ou un changement de rôle est effectif immédiatement.
 - D28 Protection des routes : Depends(get_current_user) pour être connecté, Depends(require_roles(UserRole.X, ...)) pour restreindre à certains rôles (401 si non authentifié, 403 si rôle insuffisant).
 - D29 Authentification Swagger : schéma HTTPBearer (coller l'access token). Profil de l'utilisateur connecté : GET /api/v1/users/me.
+
+## Gestion des erreurs (T3.6)
+- D30 Format unique de toutes les erreurs : {"error": {"code", "message", "details"?}}. Codes : bad_request, unauthorized, forbidden, not_found, method_not_allowed, conflict, validation_error, too_many_requests, internal_error.
+- D31 Convention : à partir de la Phase 4, les services lèvent des AppError (NotFoundError, ConflictError, ForbiddenError, UnauthorizedError) et jamais HTTPException. Les endpoints existants (auth) gardent HTTPException, converti par le gestionnaire central ; migration progressive.
+- D32 Les erreurs de validation (422) n'incluent jamais la valeur reçue (risque de fuite d'un mot de passe).
+- D33 Erreur 500 : message générique au client, détail dans les journaux serveur. Attention : avec DEBUG=true (développement), Starlette affiche la trace complète ; en production DEBUG doit être false (à vérifier en Phase 8).
