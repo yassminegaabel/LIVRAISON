@@ -66,3 +66,9 @@
 - D20 Inscription : rôle toujours "customer" ; mot de passe 8 à 128 caractères avec au moins une lettre et un chiffre ; téléphone au format international E.164 ; email stocké en minuscules.
 - D21 Doublons : réponse 409 qui précise "email" ou "téléphone" (choix d'ergonomie ; la limitation du nombre de tentatives sera ajoutée en T7.3).
 - D22 Tests d'API : transaction annulée à la fin de chaque test (fixture db_session), sur la base de développement.
+
+## Connexion (T3.4b)
+- D23 Login par email ou téléphone. Même erreur 401 pour compte inconnu et mauvais mot de passe ; vérification d'un hash factice si le compte n'existe pas (temps de réponse constant). Compte désactivé : 403, seulement après un bon mot de passe.
+- D24 Refresh avec rotation : chaque refresh révoque l'ancien token. Réutilisation d'un token déjà utilisé : tous les refresh tokens de l'utilisateur sont révoqués.
+- D25 Logout : révoque le refresh token (idempotent, 204). Limite connue : un access token déjà émis reste valide jusqu'à son expiration (30 min).
+- D26 Pas encore de limitation du nombre de tentatives de connexion : à ajouter en T7.3 (protection contre la force brute).
