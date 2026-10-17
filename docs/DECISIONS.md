@@ -54,3 +54,9 @@
 - D13 (hypothèse à confirmer) Gain du livreur = driver_share_percent (80 %) des frais de livraison.
 - D14 Zones de livraison : cercle (centre + rayon) au départ.
 - Conception détaillée de la base : voir docs/DATABASE.md.
+
+## Sécurité (T3.3)
+- D15 Mots de passe : Argon2id via pwdlib ; seul le hash est stocké.
+- D16 Access token : JWT HS256 (PyJWT), 30 min, claims sub/role/type/iat/exp/jti. Le champ "sub" est une chaîne (id utilisateur).
+- D17 Refresh token : chaîne aléatoire opaque (non JWT), stockée hachée en SHA-256 dans refresh_tokens, durée 30 jours, révocable.
+- D18 SECRET_KEY : minimum 32 caractères, uniquement dans .env. Changer la clé invalide tous les access tokens.
