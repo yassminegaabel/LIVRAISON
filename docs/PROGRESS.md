@@ -11,10 +11,11 @@
 - T3.2 Modèles users, refresh_tokens, admins, customers + migration 792c3e1c2311
 - T3.3 Hachage Argon2, JWT, refresh tokens
 - T3.4a Inscription client POST /api/v1/auth/register
-- T3.4b Connexion, refresh avec rotation, déconnexion (36 tests, commit a65240d)
+- T3.4b Connexion, refresh avec rotation, déconnexion
+- T3.5 Utilisateur courant, RBAC, GET /api/v1/users/me (48 tests, commit 2305459)
 
 ## En cours
-- T3.5 Utilisateur courant et RBAC, GET /api/v1/users/me (branche feature/t3-5-rbac)
+- T3.6 Gestion centralisée des erreurs (branche feature/t3-6-errors)
 
 ## Bloqué
 - Rien
@@ -24,6 +25,7 @@
 - Le mot de passe de la base et la SECRET_KEY sont uniquement dans backend/.env (ignoré par Git).
 - Sécurité à compléter : limitation des tentatives de connexion (T7.3).
 - Base de développement : 1 utilisateur de test (yassmine@example.com, rôle customer).
+- Test manuel Swagger avec le bouton Authorize : pas encore fait (optionnel, couvert par les tests).
 
 ## À venir
-- T3.6 erreurs centralisées, T3.7 audit logs, T3.8 documentation OpenAPI, puis Phase 4
+- T3.7 audit logs, T3.8 documentation OpenAPI, puis Phase 4 (clients, adresses, commerçants...)

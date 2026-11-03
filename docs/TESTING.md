@@ -24,3 +24,4 @@ Une tâche n'est cochée dans PROGRESS.md qu'après exécution réelle des comma
 - Commande : .venv\Scripts\python.exe -m pytest -v (24 tests attendus après T3.4a)
 - Après T3.4b : 36 tests attendus (users en base : 1 = l'utilisateur de test créé à la main en T3.4a).
 - Après T3.5 : 48 tests attendus.
+- Après T3.6 : 56 tests attendus.
