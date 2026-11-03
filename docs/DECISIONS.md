@@ -83,3 +83,14 @@
 - D31 Convention : à partir de la Phase 4, les services lèvent des AppError (NotFoundError, ConflictError, ForbiddenError, UnauthorizedError) et jamais HTTPException. Les endpoints existants (auth) gardent HTTPException, converti par le gestionnaire central ; migration progressive.
 - D32 Les erreurs de validation (422) n'incluent jamais la valeur reçue (risque de fuite d'un mot de passe).
 - D33 Erreur 500 : message générique au client, détail dans les journaux serveur. Attention : avec DEBUG=true (développement), Starlette affiche la trace complète ; en production DEBUG doit être false (à vérifier en Phase 8).
+
+## Décisions du MVP (2026-10-17)
+- D34 Objectif : un MVP complet en 14 jours (parcours client, commerçant, livreur, admin), voir docs/PROJECT_PLAN.md.
+- D35 Simplifications de schéma : pas de categories, product_options, opening_hours, delivery_zones, settings, payments, deliveries, audit_logs ; frais de livraison fixes par commerçant ; orders.payment_status ; orders.driver_id.
+- D36 Une seule application web Angular avec un espace par rôle (le projet customer-site) ; merchant-portal et admin-dashboard ne sont pas développés. Application Flutter du livreur : bonus.
+- D37 Le panier est côté navigateur ; les prix sont recalculés par le serveur à la création de la commande.
+- D38 Paiement : espèces uniquement ; payment_status passe de pending à paid à la livraison.
+- D39 Suivi de commande : rafraîchissement automatique (environ toutes les 10 secondes), pas de temps réel ni de GPS.
+- D40 Les inscriptions commerçant et livreur créent un compte en attente (pending) validé par l'admin ; le compte admin est créé par un script.
+- D41 Montants exposés en nombres dans l'API, calculés en Decimal côté serveur.
+- D42 Git : branche dev, fusion dans main chaque soir ; étiquette backup-avant-mvp.
